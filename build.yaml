@@ -1,0 +1,24 @@
+# Build configuration for code generation
+targets:
+  $default:
+    builders:
+      injectable_generator:injectable_builder:
+        enabled: true
+        generate_for:
+          - lib/**
+      injectable_generator:injectable_config_builder:
+        enabled: true
+        generate_for:
+          - lib/core/di/injection_container.dart
+      retrofit_generator:
+        enabled: true
+        generate_for:
+          - lib/**/*_datasource.dart
+      json_serializable:
+        enabled: true
+        generate_for:
+          - lib/**/*_model.dart
+      hive_generator:
+        enabled: true
+        generate_for:
+          - lib/**/*_model.dart
